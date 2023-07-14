@@ -1,6 +1,5 @@
 *.o
 st
 *.orig
-*scheme
 *.itermcolors
 *.py
