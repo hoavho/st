@@ -99,37 +99,29 @@ char *termname = "st-256color";
  */
 unsigned int tabspaces = 8;
 
+/* bg opacity */
+float alpha = 0.9;
+
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
-	//[0] = "#585e6b", // rgb(88, 94, 107)   //Ansi 0 Color - Grey vs. dark brown
 	[0] = "#282828",
-	//[1] = "#db090f", // rgb(219, 9, 15)    //Ansi 1 Color - Red vs. red
 	[1] = "#CC241D",
-	//[2] = "#8cb371", // rgb(140, 179, 113) //Ansi 10 Color - Green vs. green+yellow
 	[2] = "#98971A",
-	//[3] = "#d4b373", // rgb(212, 179, 115) //Ansi 11 Color - Brown + yellow vs brown + orange 
 	[3] = "#d79921", //
-	[4] = "#83afd8", // rgb(131, 175, 216) //Ansi 12 Color - Blue (this blue) vs turquoise
-	//[5] = "#1A6531", //"#c074d6", // rgb(192, 116, 214) //Ansi 13 Color - Purple vs plum
+	[4] = "#83afd8", // rgb(131, 175, 216) //Ansi 12 Color
 	[5] = "#33804A", //"#1A6531", // "#D38275", // "#B16286",
-	[6] = "#50a7b3", // rgb(80, 167, 179)  //Ansi 14 Color - turquoise vs green
-	//[7] = "#f1f1ef", // rgb(241, 241, 239) //Ansi 15 Color - creamy vs brown
+	[6] = "#50a7b3", // rgb(80, 167, 179)  //Ansi 14 Color
 	[7] = "#A89984",
 
 	/* 8 bright colors */
-	//[8]  = "#8cb371", // rgb(140, 179, 113) //Ansi 2 Color
 	[8]  = "#928374",
-	//[9]  = "#d4b373", // rgb(212, 179, 115) //Ansi 3 Color
 	[9]  = "#FB4934",
-	//[10] = "#417ab3", // rgb(65, 122, 179) //Ansi 4 Color
 	[10] = "#B8BB26",
-	//[11] = "#c074d6", // rgb(192, 116, 214) //Ansi 5 Color
 	[11] = "#FABD2F", 
 	[12] = "#5ca5e2", // rgb(92, 165, 226) //Ansi 6 Color
 	[13] = "#dbded8", // rgb(219, 222, 216) //Ansi 7 Color
 	[14] = "#585e6b", // rgb(88, 94, 107) //Ansi 8 Color
-	//[15] = "#db090f", // rgb(219, 9, 15) //Ansi 9 Color
 	[15] = "#EBDBB2",
 
 	[255] = 0,
@@ -137,8 +129,7 @@ static const char *colorname[] = {
 	/* more colors can be added after 255 to use with DefaultXX */
 	/* special colors */
 	[256] = "#282c34", // rgb(40, 44, 52) //Background Color
-	//[257] = "#feffff", // rgb(254, 255, 255) //Foreground Color
-	[257] = "#EBDBB2", 
+	[257] = "#EBDBB2", // Foreground Color 
 	[258] = "#feffff", // rgb(254, 255, 255) //Cursor Color
 	[259] = "#b3ecff"  // rgb(179, 236, 255) //Cursor Guide Color
 };
@@ -223,6 +214,7 @@ ResourcePref resources[] = {
 		{ "borderpx",     INTEGER, &borderpx },
 		{ "cwscale",      FLOAT,   &cwscale },
 		{ "chscale",      FLOAT,   &chscale },
+		{ "alpha",        FLOAT,   &alpha },
 };
 
 /*
